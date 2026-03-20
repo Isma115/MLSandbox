@@ -4,6 +4,7 @@ Reglas:
 
 1. Ni se te ocurra usar emojis ni en el código ni en la interfaz
 2. No marques las tareas como COMPLETADA, solo el usuario podrá hacerlo
+3. Documenta cada funcionalidad en una carpeta de docs, para cada sección de la aplicación con información en lenguaje no técnico y luego en lenguaje técnico, explicando las funcionalidades, como se han implementado y el flujo de ejecución que siguen en el programa.
 
 Primera funcionalidad:
 
@@ -23,3 +24,24 @@ Primera funcionalidad:
 
 [COMPLETADA] La pantalla de configuración del modelo no debe tener un selector de tipo de modelo, sino que tiene que tener los controles necesarios para entrenar el modelo con la arquitectura correspondiente
 
+[COMPLETADA] Pestaña Recursos: en el panel lateral izquierdo va a haber una sección que permita gestionar todos los recursos del programa en cuanto a datasets, modelos cargados, sets de imágenes, etc, etc. Se van a poder cargar o eliminar de la memoria
+
+[COMPLETADA] Optimiza el fichero main.py ahí solo tiene que estar la funcionalidad de ejecución principal de la aplicación
+
+[COMPLETADA] La pestaña modelos tiene que ser un desplegable, y dentro de ella estarán los botones de crear y cargar modelo, y debajo la lista de modelos cargados en memoria.
+
+[COMPLETADA] Cambia la interfaz gráfica por una escala de grises, botones y componentes cuadrados sin bordes redondeados, y una paleta de colores definida para todo el programa. Utiliza una fuente moderna y legible, y un espaciado adecuado para que la interfaz sea agradable a la vista.
+
+[COMPLETADA] En la pestaña de recursos, solo hay una lista de recursos que se pueden cargar y eliminar.
+
+[COMPLETADA] Implementa la funcionalidad para importar Recursos, de cualquier tipo, pero se va a poder importar carpetas o archivos, para uno u otro se tendrá un botón de importar.
+
+[COMPLETADA] En la pestaña de recursos, se podrá eliminar los recursos cargados en memoria, y se podrá ver una lista de los recursos cargados en memoria.
+
+[COMPLETADA] Habrá una carpeta en la raíz del proyecto llamado examples, que tendrá datasets famosos típicos para realizar entrenamientos e inferencia con datasets de ejemplo (como Iris por ejemplo)
+
+[COMPLETADA] Colocar en el gitignore todos los ficheros y carpetas que no deban subirse a github, los datasets de ejemplo deben subirse, esos no se ignorarán
+
+[COMPLETADA] Para las ventanas que piden que cargues un archivo de dataset haz que sea funcional, haz que la ventana de regresión sea totalmente funcional y se pueda entrenar exportar y hacer inferencia sobre el modelo de regresión
+
+[TAREA] Lee image.png en specs_images, el dataset como iris.csv tiene una variable objetivo de tipo texto, por lo que no lo procesa bien por que espera float, consigue que el sistema sea sólido para cualquier tipo de dato.

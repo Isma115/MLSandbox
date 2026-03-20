@@ -7,8 +7,8 @@ class CNNView(QWidget):
         layout = QVBoxLayout(self)
         layout.setAlignment(Qt.AlignTop | Qt.AlignHCenter)
         label_cnn = QLabel(
-            "<h3 style='color:#eba0ac;'>Arquitectura: Red Convolucional (CNN)</h3><br>"
-            "<p style='color:#bac2de; font-size:15px; text-align:center;'>"
+            "<h3 style='color:#d4d4d4;'>Arquitectura: Red Convolucional (CNN)</h3><br>"
+            "<p style='color:#d4d4d4; font-size:15px; text-align:center;'>"
             "Filtros Conv2D: 32, 64, 128<br>"
             "Capas de Agrupación (Pooling): MaxPooling 2x2<br>"
             "Aplanado (Flatten)<br>"

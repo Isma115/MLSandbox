@@ -16,7 +16,7 @@ class ModelView(QWidget):
         main_layout = QVBoxLayout(self)
         main_layout.setAlignment(Qt.AlignTop)
         
-        title_label = QLabel("<h1 style='color:#89b4fa; margin-top:20px;'>Configuración del Modelo</h1>")
+        title_label = QLabel("<h1 style='color:#d4d4d4; margin-top:20px;'>Configuración del Modelo</h1>")
         title_label.setAlignment(Qt.AlignCenter)
         main_layout.addWidget(title_label)
         

@@ -7,15 +7,15 @@ class ModelTypeDialog(QDialog):
         self.setWindowTitle(title)
         self.setFixedSize(380, 160)
         self.setStyleSheet("""
-            QDialog { background-color: #1e1e2e; color: #cdd6f4; }
-            QLabel { color: #cdd6f4; font-size: 14px; margin-bottom: 10px; }
-            QComboBox { background-color: #313244; color: #cdd6f4; border: 1px solid #45475a; border-radius: 4px; padding: 6px; font-size: 13px; }
+            QDialog { background-color: #1a1a1a; color: #e0e0e0; }
+            QLabel { color: #e0e0e0; font-size: 14px; margin-bottom: 10px; }
+            QComboBox { background-color: #1a1a1a; color: #e0e0e0; border: 1px solid #333333; border-radius: 0px; padding: 6px; font-size: 13px; }
             QComboBox::drop-down { border: 0px; }
-            QComboBox QAbstractItemView { background-color: #313244; color: #cdd6f4; selection-background-color: #45475a; }
-            QPushButton { background-color: #89b4fa; color: #11111b; font-weight: bold; border-radius: 6px; padding: 8px 15px; }
-            QPushButton:hover { background-color: #b4befe; }
-            QPushButton#btnCancel { background-color: #f38ba8; }
-            QPushButton#btnCancel:hover { background-color: #fba2bc; }
+            QComboBox QAbstractItemView { background-color: #1a1a1a; color: #e0e0e0; selection-background-color: #333333; }
+            QPushButton { background-color: #404040; color: #e0e0e0; font-weight: bold; border-radius: 0px; padding: 8px 15px; }
+            QPushButton:hover { background-color: #555555; }
+            QPushButton#btnCancel { background-color: #5a2a2a; }
+            QPushButton#btnCancel:hover { background-color: #7a3a3a; }
         """)
         
         layout = QVBoxLayout(self)

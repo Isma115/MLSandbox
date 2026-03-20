@@ -8,7 +8,7 @@ class HomeView(QWidget):
         main_layout = QVBoxLayout(self)
         main_layout.setAlignment(Qt.AlignCenter)
         
-        title_label = QLabel("<h1 style='color:#89b4fa; margin-bottom:50px;'>ML Sandbox</h1>")
+        title_label = QLabel("<h1 style='color:#d4d4d4; margin-bottom:50px;'>ML Sandbox</h1>")
         title_label.setAlignment(Qt.AlignCenter)
         main_layout.addWidget(title_label)
         
@@ -20,16 +20,16 @@ class HomeView(QWidget):
         # Estilo para botones cuadrados grises con efecto al hacer hover (adaptados al UI general)
         btn_style_dark = """
         QPushButton {
-            background-color: #45475a;  /* Gris medio */
-            color: #cdd6f4;             /* Texto claro */
+            background-color: #404040;  /* Gris medio */
+            color: #e0e0e0;             /* Texto claro */
             font-weight: normal;
-            border-radius: 12px;
+            border-radius: 0px;
         }
         QPushButton:hover {
-            background-color: #585b70;  /* Gris más claro al hover */
+            background-color: #555555;  /* Gris más claro al hover */
         }
         QPushButton:pressed {
-            background-color: #313244;
+            background-color: #2a2a2a;
         }
         """
         

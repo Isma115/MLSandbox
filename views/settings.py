@@ -7,6 +7,6 @@ class SettingsView(QWidget):
         layout = QVBoxLayout(self)
         layout.setAlignment(Qt.AlignCenter)
         
-        label = QLabel("<h2 style='color:#89b4fa; margin-bottom:10px;'>Ajustes</h2><p style='color:#a6adc8;'>Configuración general de la aplicación.</p>")
+        label = QLabel("<h2 style='color:#d4d4d4; margin-bottom:10px;'>Ajustes</h2><p style='color:#d4d4d4;'>Configuración general de la aplicación.</p>")
         label.setAlignment(Qt.AlignCenter)
         layout.addWidget(label)

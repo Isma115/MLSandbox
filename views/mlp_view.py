@@ -7,8 +7,8 @@ class MLPView(QWidget):
         layout = QVBoxLayout(self)
         layout.setAlignment(Qt.AlignTop | Qt.AlignHCenter)
         label = QLabel(
-            "<h3 style='color:#a6e3a1;'>Arquitectura: Perceptrón Multicapa (MLP)</h3><br>"
-            "<p style='color:#bac2de; font-size:15px; text-align:center;'>"
+            "<h3 style='color:#d4d4d4;'>Arquitectura: Perceptrón Multicapa (MLP)</h3><br>"
+            "<p style='color:#d4d4d4; font-size:15px; text-align:center;'>"
             "Capas de Entrada: Dinámico según dataset<br>"
             "Capas Ocultas: N Layers<br>"
             "Capas de Salida: M Clases<br>"

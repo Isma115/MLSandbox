@@ -7,8 +7,8 @@ class TransformerView(QWidget):
         layout = QVBoxLayout(self)
         layout.setAlignment(Qt.AlignTop | Qt.AlignHCenter)
         label_transformer = QLabel(
-            "<h3 style='color:#f9e2af;'>Arquitectura: Transformer</h3><br>"
-            "<p style='color:#bac2de; font-size:15px; text-align:center;'>"
+            "<h3 style='color:#d4d4d4;'>Arquitectura: Transformer</h3><br>"
+            "<p style='color:#d4d4d4; font-size:15px; text-align:center;'>"
             "Mecanismos de Atención: Multi-Head Attention<br>"
             "Cabezas (Heads): 8<br>"
             "Bloques del Codificador / Decodificador: 6<br>"
