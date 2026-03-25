@@ -1,19 +1,25 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel
 from PySide6.QtCore import Qt
+from core.styles import apply_stylesheet
 
 class MLPView(QWidget):
     def __init__(self):
         super().__init__()
+        self.setObjectName("MLPView")
+        apply_stylesheet(self, "mlp_view.qss")
         layout = QVBoxLayout(self)
         layout.setAlignment(Qt.AlignTop | Qt.AlignHCenter)
-        label = QLabel(
-            "<h3 style='color:#d4d4d4;'>Arquitectura: Perceptrón Multicapa (MLP)</h3><br>"
-            "<p style='color:#d4d4d4; font-size:15px; text-align:center;'>"
-            "Capas de Entrada: Dinámico según dataset<br>"
-            "Capas Ocultas: N Layers<br>"
-            "Capas de Salida: M Clases<br>"
+        title = QLabel("Arquitectura: Perceptrón Multicapa (MLP)")
+        title.setObjectName("MLPTitle")
+        title.setAlignment(Qt.AlignCenter)
+        layout.addWidget(title)
+
+        description = QLabel(
+            "Capas de Entrada: Dinámico según dataset\n"
+            "Capas Ocultas: N Layers\n"
+            "Capas de Salida: M Clases\n"
             "Función de Activación: ReLU / Sigmoid"
-            "</p>"
         )
-        label.setAlignment(Qt.AlignCenter)
-        layout.addWidget(label)
+        description.setObjectName("MLPDescription")
+        description.setAlignment(Qt.AlignCenter)
+        layout.addWidget(description)

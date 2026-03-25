@@ -1,11 +1,12 @@
 import logging
 import os
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel,
     QListWidget, QListWidgetItem, QFileDialog, QAbstractItemView, QFrame
 )
 from PySide6.QtCore import Qt
+from core.styles import apply_stylesheet
 
 
 @dataclass
@@ -19,6 +20,8 @@ class Resource:
 class ResourcesView(QWidget):
     def __init__(self):
         super().__init__()
+        self.setObjectName("ResourcesView")
+        apply_stylesheet(self, "resources_view.qss")
 
         self.resources: list[Resource] = []
 
@@ -29,14 +32,12 @@ class ResourcesView(QWidget):
 
         # ── Título ──────────────────────────────────────────────────────────
         title_label = QLabel("Gestión de Recursos")
-        title_label.setStyleSheet(
-            "color: #d4d4d4; font-size: 22px; font-weight: bold; padding-bottom: 6px;"
-        )
+        title_label.setObjectName("ResourcesTitle")
         main_layout.addWidget(title_label)
 
         separator = QFrame()
+        separator.setObjectName("ResourcesSeparator")
         separator.setFrameShape(QFrame.HLine)
-        separator.setStyleSheet("color: #333333;")
         main_layout.addWidget(separator)
 
         # ── Botones de importación ───────────────────────────────────────────
@@ -45,15 +46,14 @@ class ResourcesView(QWidget):
 
         btn_importar_archivo = QPushButton("Importar Archivo")
         btn_importar_archivo.setObjectName("btnImportarArchivo")
+        btn_importar_archivo.setProperty("variant", "primary")
         btn_importar_archivo.setCursor(Qt.PointingHandCursor)
-        btn_importar_archivo.setStyleSheet(self._btn_style("#404040", "#555555", "#555555"))
         btn_importar_archivo.clicked.connect(self.importar_archivo)
         import_layout.addWidget(btn_importar_archivo)
 
         btn_importar_carpeta = QPushButton("Importar Carpeta")
         btn_importar_carpeta.setObjectName("btnImportarCarpeta")
         btn_importar_carpeta.setCursor(Qt.PointingHandCursor)
-        btn_importar_carpeta.setStyleSheet(self._btn_style("#404040", "#555555", "#555555"))
         btn_importar_carpeta.clicked.connect(self.importar_carpeta)
         import_layout.addWidget(btn_importar_carpeta)
 
@@ -62,33 +62,13 @@ class ResourcesView(QWidget):
 
         # ── Etiqueta de la lista ────────────────────────────────────────────
         lbl_lista = QLabel("Recursos cargados en memoria:")
-        lbl_lista.setStyleSheet("color: #a0a0a0; font-size: 13px;")
+        lbl_lista.setObjectName("ResourcesHint")
         main_layout.addWidget(lbl_lista)
 
         # ── Lista de recursos ────────────────────────────────────────────────
         self.lista_recursos = QListWidget()
+        self.lista_recursos.setObjectName("ResourcesList")
         self.lista_recursos.setSelectionMode(QAbstractItemView.SingleSelection)
-        self.lista_recursos.setStyleSheet("""
-            QListWidget {
-                background-color: #1a1a1a;
-                border: 1px solid #333333;
-                color: #d4d4d4;
-                font-size: 13px;
-                padding: 6px;
-                border-radius: 0px;
-            }
-            QListWidget::item {
-                padding: 10px 8px;
-                border-bottom: 1px solid #2a2a2a;
-            }
-            QListWidget::item:selected {
-                background-color: #333333;
-                color: #ffffff;
-            }
-            QListWidget::item:hover {
-                background-color: #252525;
-            }
-        """)
         main_layout.addWidget(self.lista_recursos)
 
         # ── Botón eliminar ────────────────────────────────────────────────────
@@ -97,31 +77,12 @@ class ResourcesView(QWidget):
 
         btn_eliminar = QPushButton("Eliminar seleccionado")
         btn_eliminar.setObjectName("btnEliminar")
+        btn_eliminar.setProperty("variant", "danger")
         btn_eliminar.setCursor(Qt.PointingHandCursor)
-        btn_eliminar.setStyleSheet(self._btn_style("#5a2a2a", "#7a3a3a", "#7a3a3a"))
         btn_eliminar.clicked.connect(self.eliminar_recurso)
         actions_layout.addWidget(btn_eliminar)
 
         main_layout.addLayout(actions_layout)
-
-    # ── Helpers de estilo ──────────────────────────────────────────────────────
-
-    @staticmethod
-    def _btn_style(bg: str, hover: str, border: str) -> str:
-        return f"""
-            QPushButton {{
-                background-color: {bg};
-                color: #d4d4d4;
-                font-weight: bold;
-                border: 1px solid {border};
-                border-radius: 0px;
-                padding: 9px 18px;
-                font-size: 13px;
-            }}
-            QPushButton:hover {{
-                background-color: {hover};
-            }}
-        """
 
     # ── Lógica ────────────────────────────────────────────────────────────────
 
@@ -130,7 +91,7 @@ class ResourcesView(QWidget):
             self,
             "Importar Archivo",
             "",
-            "Todos los archivos (*);;CSV (*.csv);;Imágenes (*.png *.jpg *.jpeg *.bmp);;Modelos (*.pkl *.h5 *.pt *.pth);;Texto (*.txt *.json)"
+            "Todos los archivos (*);;CSV (*.csv);;Imagenes (*.png *.jpg *.jpeg *.bmp);;Modelos (*.pkl *.h5 *.pt *.pth);;Texto (*.txt *.json)"
         )
         if not ruta:
             return

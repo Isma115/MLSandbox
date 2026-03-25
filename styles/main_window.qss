@@ -1,0 +1,65 @@
+#SidebarWidget {
+    background-color: #0d121a;
+}
+
+#SidebarWidget QPushButton {
+    text-align: left;
+    padding: 12px 20px;
+    background-color: transparent;
+    color: #b7c1d8;
+    border: none;
+    border-left: 3px solid transparent;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#SidebarWidget QPushButton:hover {
+    background-color: #161c27;
+    color: #f7f9ff;
+}
+
+#SidebarWidget QPushButton:checked {
+    background-color: rgba(47, 109, 246, 0.16);
+    color: #ffffff;
+    border-left: 3px solid #4d87ff;
+}
+
+#SidebarWidget QPushButton[is_sub="true"] {
+    padding: 10px 12px 10px 38px;
+    font-size: 13px;
+    color: #97a4bf;
+}
+
+#SidebarWidget QPushButton[is_dropdown="true"] {
+    font-weight: 700;
+    color: #eef2ff;
+}
+
+#SidebarWidget QListWidget {
+    background-color: transparent;
+    color: #dbe3f6;
+    border: none;
+    font-size: 13px;
+    padding-left: 35px;
+}
+
+#SidebarWidget QListWidget::item {
+    padding: 7px 0px;
+}
+
+#SidebarWidget QListWidget::item:hover {
+    color: #ffffff;
+}
+
+#SidebarWidget QListWidget::item:selected {
+    background-color: rgba(47, 109, 246, 0.16);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+#SidebarMemoryLabel {
+    color: #93a0bb;
+    font-size: 11px;
+    padding-left: 40px;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,10 @@
+#CNNTitle {
+    color: #f7f9ff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#CNNDescription {
+    color: #93a0bb;
+    font-size: 15px;
+}

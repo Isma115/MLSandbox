@@ -1,0 +1,32 @@
+#ResourcesTitle {
+    color: #f7f9ff;
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 6px;
+}
+
+#ResourcesSeparator {
+    background-color: #263148;
+    border: none;
+    min-height: 1px;
+    max-height: 1px;
+}
+
+#ResourcesHint {
+    color: #93a0bb;
+    font-size: 13px;
+}
+
+#ResourcesList {
+    font-size: 13px;
+    padding: 8px;
+}
+
+#ResourcesList::item {
+    padding: 10px 8px;
+    border-bottom: 1px solid #1b2230;
+}
+
+#ResourcesList::item:hover {
+    background-color: #151b26;
+}

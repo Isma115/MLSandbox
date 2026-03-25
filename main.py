@@ -1,6 +1,10 @@
 import pandas as pd
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as _plt_warmup  # noqa: F401 — fuerza import antes de PySide6
 import sys
 from PySide6.QtWidgets import QApplication
+
 
 from views.main_window import MainWindow
 

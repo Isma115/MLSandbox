@@ -1,0 +1,13 @@
+#InferenceTable {
+    font-size: 13px;
+}
+
+#SamplesTable {
+    font-size: 12px;
+}
+
+#RegressionChartCanvas {
+    background-color: #11161f;
+    border: 1px solid #1f2633;
+    border-radius: 0px;
+}

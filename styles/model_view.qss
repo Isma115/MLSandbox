@@ -1,0 +1,11 @@
+#ModelViewTitle {
+    color: #f7f9ff;
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 20px;
+}
+
+#ModelScrollArea {
+    background-color: transparent;
+    border: none;
+}

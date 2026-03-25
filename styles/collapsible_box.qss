@@ -1,0 +1,26 @@
+#CollapsibleContainer {
+    background-color: #141c28;
+    border: 1px solid #2b3950;
+    border-radius: 0px;
+}
+
+#CollapsibleToggleButton {
+    background-color: #182131;
+    color: #f4f7ff;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 14px 12px 14px;
+}
+
+#CollapsibleToggleButton:hover {
+    background-color: #1c2738;
+    color: #8ab1ff;
+}
+
+#CollapsibleContentArea {
+    border: none;
+    border-top: 1px solid #223047;
+    background-color: #141c28;
+}

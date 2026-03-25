@@ -1,0 +1,11 @@
+#SettingsTitle {
+    color: #f7f9ff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#SettingsSubtitle {
+    color: #93a0bb;
+    font-size: 15px;
+}

@@ -1,19 +1,25 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel
 from PySide6.QtCore import Qt
+from core.styles import apply_stylesheet
 
 class TransformerView(QWidget):
     def __init__(self):
         super().__init__()
+        self.setObjectName("TransformerView")
+        apply_stylesheet(self, "transformer_view.qss")
         layout = QVBoxLayout(self)
         layout.setAlignment(Qt.AlignTop | Qt.AlignHCenter)
-        label_transformer = QLabel(
-            "<h3 style='color:#d4d4d4;'>Arquitectura: Transformer</h3><br>"
-            "<p style='color:#d4d4d4; font-size:15px; text-align:center;'>"
-            "Mecanismos de Atención: Multi-Head Attention<br>"
-            "Cabezas (Heads): 8<br>"
-            "Bloques del Codificador / Decodificador: 6<br>"
+        title = QLabel("Arquitectura: Transformer")
+        title.setObjectName("TransformerTitle")
+        title.setAlignment(Qt.AlignCenter)
+        layout.addWidget(title)
+
+        description = QLabel(
+            "Mecanismos de Atención: Multi-Head Attention\n"
+            "Cabezas (Heads): 8\n"
+            "Bloques del Codificador / Decodificador: 6\n"
             "Dimensión de Extracción (Embedding): 512"
-            "</p>"
         )
-        label_transformer.setAlignment(Qt.AlignCenter)
-        layout.addWidget(label_transformer)
+        description.setObjectName("TransformerDescription")
+        description.setAlignment(Qt.AlignCenter)
+        layout.addWidget(description)
