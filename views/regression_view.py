@@ -123,6 +123,7 @@ class TrainingWorker(QThread):
             metrics["quality_score"] = quality_score
 
             bundle = {
+                "sandbox_model_type": "regression",
                 "model": model,
                 "scaler": scaler,
                 "features": list(X.columns),
@@ -144,6 +145,8 @@ class TrainingWorker(QThread):
 # ─────────────────────────────────────────────────────────────────────────────
 
 class RegressionView(QWidget):
+    bundle_changed = Signal(dict)
+
     def __init__(self):
         super().__init__()
         self.setObjectName("RegressionView")
@@ -441,6 +444,7 @@ class RegressionView(QWidget):
     def _on_training_done(self, bundle: dict, metrics: dict):
         self._bundle = bundle
         self._last_metrics = metrics
+        self.bundle_changed.emit(bundle)
         self.btn_train.setEnabled(True)
         self.btn_export.setEnabled(True)
         self.btn_infer.setEnabled(True)

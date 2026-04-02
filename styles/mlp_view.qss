@@ -1,10 +1,13 @@
-#MLPTitle {
-    color: #f7f9ff;
-    font-size: 24px;
-    font-weight: 700;
+#InferenceTable {
+    font-size: 13px;
 }
 
-#MLPDescription {
-    color: #93a0bb;
-    font-size: 15px;
+#SamplesTable {
+    font-size: 12px;
+}
+
+#MLPChartCanvas {
+    background-color: #11161f;
+    border: 1px solid #1f2633;
+    border-radius: 0px;
 }

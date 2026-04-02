@@ -153,6 +153,8 @@ class KMeansTrainingWorker(QThread):
 
 
 class KMeansView(QWidget):
+    bundle_changed = Signal(dict)
+
     def __init__(self):
         super().__init__()
         self.setObjectName("KMeansView")
@@ -452,6 +454,7 @@ class KMeansView(QWidget):
     def _on_training_done(self, bundle: dict, metrics: dict):
         self._bundle = bundle
         self._last_metrics = metrics
+        self.bundle_changed.emit(bundle)
         self.btn_train.setEnabled(True)
         self.btn_export.setEnabled(True)
         self.btn_infer.setEnabled(True)

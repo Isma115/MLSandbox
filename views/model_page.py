@@ -68,3 +68,9 @@ class ModelView(QWidget):
         else:
             title = "Configuración del Modelo"
         self.title_label.setText(title)
+
+    def clear_active_model(self):
+        view = self.stack_arch.currentWidget()
+        if hasattr(view, "reset_view"):
+            view.reset_view()
+        self._update_title()

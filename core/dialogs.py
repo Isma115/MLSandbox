@@ -93,3 +93,60 @@ class ManualInferenceDialog(QDialog):
     def get_values(self):
         """Devuelve un diccionario con los valores de las características."""
         return {feature: self.inputs[feature].text().strip() for feature in self.features}
+
+
+class DeleteModelDialog(QDialog):
+    def __init__(self, model_name: str, storage_path: str | None, parent=None):
+        super().__init__(parent)
+        self.setObjectName("DeleteModelDialog")
+        self.setWindowTitle("Eliminar modelo")
+        self.setMinimumWidth(440)
+        self._selected_mode = None
+        apply_stylesheet(self, "dialogs.qss")
+
+        layout = QVBoxLayout(self)
+        layout.setSpacing(12)
+
+        title = QLabel(f"Selecciona como eliminar '{model_name}':")
+        title.setProperty("role", "dialog-title")
+        layout.addWidget(title)
+
+        info = QLabel(
+            "Puedes quitar el modelo solo de la memoria activa o borrar tambien "
+            "sus archivos guardados."
+        )
+        info.setWordWrap(True)
+        layout.addWidget(info)
+
+        if storage_path:
+            path_label = QLabel(f"Ruta asociada: {storage_path}")
+        else:
+            path_label = QLabel("Este modelo no tiene una ruta guardada en disco.")
+        path_label.setWordWrap(True)
+        layout.addWidget(path_label)
+
+        btn_layout = QHBoxLayout()
+        btn_layout.addStretch()
+
+        btn_cancel = QPushButton("Cancelar")
+        btn_cancel.setProperty("variant", "danger")
+        btn_cancel.clicked.connect(self.reject)
+
+        btn_memory = QPushButton("Solo memoria")
+        btn_memory.clicked.connect(lambda: self._accept_with_mode("memory"))
+
+        btn_delete = QPushButton("Borrar completo")
+        btn_delete.clicked.connect(lambda: self._accept_with_mode("disk"))
+        btn_delete.setEnabled(bool(storage_path))
+
+        btn_layout.addWidget(btn_cancel)
+        btn_layout.addWidget(btn_memory)
+        btn_layout.addWidget(btn_delete)
+        layout.addLayout(btn_layout)
+
+    def _accept_with_mode(self, mode: str):
+        self._selected_mode = mode
+        self.accept()
+
+    def selected_mode(self) -> str | None:
+        return self._selected_mode

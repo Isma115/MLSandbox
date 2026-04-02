@@ -93,4 +93,8 @@ Primera funcionalidad:
 
 [COMPLETADA] Basándote en el aspecto y estructura de componentes del modelo de Regresión, crea una vista para crear modelos de K-Means, con su propia configuración, entrenamiento, inferencia, exportación y visualización
 
-[TAREA] Separa los estilos en una carpeta nueva llamada styles, y que cada componente tenga su propio estilo en un fichero .qss
+[COMPLETADA] Separa los estilos en una carpeta nueva llamada styles, y que cada componente tenga su propio estilo en un fichero .qss
+
+[TAREA] Añade una funcionalidad para eliminar un modelo de la lista de modelos descargados y que aparezca un popup que permita o simplemente quitarlo de la memoria RAM o borrarlo completamente con sus datos
+
+[TAREA] Agrega una vista para crear modelos de Redes Neuronales, con su propia configuración, entrenamiento, inferencia, exportación y visualización
